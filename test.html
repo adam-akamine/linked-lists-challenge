@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    Input:<br>
+    <input id = "input" type = "text"><br>
+  </form>
+  <button
+    type = "button"
+    onClick = "storeValue();"
+    >
+    Save
+  </button>
+  <button
+    type = "button"
+    onClick = "dumpValues()">
+    Dump
+  </button>
+
+  <div id = "output">
+
+  </div>
+
+  <script type ="text/javascript" src = "linkedList.js">
+  </script>
+
+  <script>
+  var newLinkedList = linkedListGenerator();
+  function storeValue () {
+    // store the value into elem
+    var elem = document.getElementById("input").value;
+    // store the output into output
+    //var output = document.getElementById("output");
+    // display the user's input
+    //output.innerHTML = elem;
+
+    // add the value to the front of the stack
+    newLinkedList.addToFront(elem);
+    console.log("added " + elem + " to stack.");
+
+    newLinkedList.displayList();
+  }
+  function dumpValues () {
+    newLinkedList.removeAll();
+    newLinkedList.displayList();
+  }
+  </script>
+
+</body>
+</html>
